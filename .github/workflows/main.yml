@@ -37,6 +37,13 @@ jobs:
             eval "$(ssh-agent -s)"
             ssh-add ~/.ssh/ssh-praktikan39
             echo "Cek folder project";
+
+            echo "Installing Node.js 16..."
+            curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            node -v
+            npm -v
+            
             [ ! -d "${HOME}/senpro/505897/modul02/senpro-github-action/" ] && 
               {
                 echo "Repository belum di-clone. Cloning...";
